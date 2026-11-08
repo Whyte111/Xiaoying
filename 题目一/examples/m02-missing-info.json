@@ -1,0 +1,48 @@
+{
+  "status": "NEEDS_INFO",
+  "item": {
+    "material_id": "M02",
+    "audit_status": "NEED_INFO",
+    "risk_reasons": [],
+    "suggested_slot": "2026-11-11 10:00-11:00",
+    "pending_items": [
+      {
+        "kind": "missing_info",
+        "question": "缺少 title，请补充后再排期",
+        "blocks_save": false
+      }
+    ],
+    "draft_status": "NOT_SAVED"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "action": "fetch",
+      "tool": "read_material",
+      "args": {
+        "material_id": "M02"
+      },
+      "result_summary": "读取成功；缺少字段：title",
+      "rationale": "素材不完整 → 只能请求补查或结束"
+    },
+    {
+      "step": 2,
+      "action": "ask",
+      "tool": null,
+      "args": {},
+      "result_summary": "已生成补查请求：缺少 title",
+      "rationale": "信息不足，不能臆测字段 → 请求补查"
+    },
+    {
+      "step": 3,
+      "action": "end",
+      "tool": null,
+      "args": {},
+      "result_summary": "流程结束",
+      "rationale": "已得到明确结论"
+    }
+  ],
+  "trace_path": "examples\\traces\\m02-missing-info.jsonl",
+  "decision_source": "policy（确定性策略，非模型）",
+  "decision_degraded": false
+}

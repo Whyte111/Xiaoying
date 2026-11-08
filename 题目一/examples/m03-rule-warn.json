@@ -1,0 +1,73 @@
+{
+  "status": "NEEDS_CONFIRM",
+  "item": {
+    "material_id": "M03",
+    "audit_status": "WARN",
+    "risk_reasons": [
+      "标题含限制级用语（医疗/最），需人工确认"
+    ],
+    "suggested_slot": "2026-11-12 09:00-10:00",
+    "pending_items": [
+      {
+        "kind": "risk_warn",
+        "question": "规则 R002：标题含限制级用语（医疗/最），需人工确认，是否确认接受？",
+        "blocks_save": false
+      }
+    ],
+    "draft_status": "SAVED_CREATED"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "action": "fetch",
+      "tool": "read_material",
+      "args": {
+        "material_id": "M03"
+      },
+      "result_summary": "读取成功；标题=最全优惠清单，医疗级体验",
+      "rationale": "素材完整 → 下一步检查规则风险"
+    },
+    {
+      "step": 2,
+      "action": "check",
+      "tool": "check_rules",
+      "args": {
+        "material_id": "M03"
+      },
+      "result_summary": "命中 1 条风险（block=0, warn=1）",
+      "rationale": "仅有 warn 风险 → 可保存但需列待确认"
+    },
+    {
+      "step": 3,
+      "action": "query",
+      "tool": "query_slots",
+      "args": {
+        "slot": "2026-11-12 09:00-10:00"
+      },
+      "result_summary": "时段 2026-11-12 09:00-10:00 冲突 0 处",
+      "rationale": "无冲突 → 可直接保存草稿"
+    },
+    {
+      "step": 4,
+      "action": "save",
+      "tool": "save_draft",
+      "args": {
+        "material_id": "M03",
+        "suggested_slot": "2026-11-12 09:00-10:00"
+      },
+      "result_summary": "保存结果=created，revision=1",
+      "rationale": "已写入草稿（仅草稿，未发布）"
+    },
+    {
+      "step": 5,
+      "action": "end",
+      "tool": null,
+      "args": {},
+      "result_summary": "流程结束",
+      "rationale": "已得到明确结论"
+    }
+  ],
+  "trace_path": "examples\\traces\\m03-rule-warn.jsonl",
+  "decision_source": "policy（确定性策略，非模型）",
+  "decision_degraded": false
+}

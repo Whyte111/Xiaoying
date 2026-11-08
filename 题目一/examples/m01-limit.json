@@ -1,0 +1,46 @@
+{
+  "status": "LIMIT_REACHED",
+  "item": {
+    "material_id": "M01",
+    "audit_status": "PASS",
+    "risk_reasons": [],
+    "suggested_slot": "2026-11-10 18:00-19:00",
+    "pending_items": [],
+    "draft_status": "NOT_SAVED"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "action": "fetch",
+      "tool": "read_material",
+      "args": {
+        "material_id": "M01"
+      },
+      "result_summary": "读取成功；标题=秋季新品预热",
+      "rationale": "素材完整 → 下一步检查规则风险"
+    },
+    {
+      "step": 2,
+      "action": "check",
+      "tool": "check_rules",
+      "args": {
+        "material_id": "M01"
+      },
+      "result_summary": "命中 0 条风险（block=0, warn=0）",
+      "rationale": "无风险 → 继续检查时段"
+    },
+    {
+      "step": 3,
+      "action": "query",
+      "tool": "query_slots",
+      "args": {
+        "slot": "2026-11-10 18:00-19:00"
+      },
+      "result_summary": "时段 2026-11-10 18:00-19:00 冲突 1 处",
+      "rationale": "存在冲突 → 生成替代时段"
+    }
+  ],
+  "trace_path": "examples\\traces\\m01-limit.jsonl",
+  "decision_source": "policy（确定性策略，非模型）",
+  "decision_degraded": false
+}

@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.env
+
+# 运行产物：草稿库是本地状态，不入库
+data/drafts.json
+data/dev_store.json
+data/demo.json
+data/llm.json
+data/fail.json
+data/limit.json
+

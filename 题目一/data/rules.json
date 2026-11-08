@@ -1,0 +1,26 @@
+[
+  {
+    "id": "R001",
+    "severity": "block",
+    "msg": "标题缺失，无法审核",
+    "check": {"field": "title", "op": "missing"}
+  },
+  {
+    "id": "R002",
+    "severity": "warn",
+    "msg": "标题含限制级用语（医疗/最），需人工确认",
+    "check": {"field": "title", "op": "contains_any", "value": ["医疗", "最"]}
+  },
+  {
+    "id": "R003",
+    "severity": "warn",
+    "msg": "标题超过 30 字",
+    "check": {"field": "title", "op": "max_len", "value": 30}
+  },
+  {
+    "id": "R004",
+    "severity": "block",
+    "msg": "内部通知不得对外发布",
+    "check": {"field": "title", "op": "contains_any", "value": ["内部"]}
+  }
+]

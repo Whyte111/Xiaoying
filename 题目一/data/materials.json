@@ -1,0 +1,37 @@
+[
+  {
+    "id": "M01",
+    "title": "秋季新品预热",
+    "body_ref": "body/M01.md",
+    "requested_slot": {"start": "2026-11-10T18:00:00", "end": "2026-11-10T19:00:00"},
+    "owner": "lin"
+  },
+  {
+    "id": "M02",
+    "title": "",
+    "body_ref": "body/M02.md",
+    "requested_slot": {"start": "2026-11-11T10:00:00", "end": "2026-11-11T11:00:00"},
+    "owner": "lin"
+  },
+  {
+    "id": "M03",
+    "title": "最全优惠清单，医疗级体验",
+    "body_ref": "body/M03.md",
+    "requested_slot": {"start": "2026-11-12T09:00:00", "end": "2026-11-12T10:00:00"},
+    "owner": "lin"
+  },
+  {
+    "id": "M04",
+    "title": "内部通知：清仓处理",
+    "body_ref": "body/M04.md",
+    "requested_slot": {"start": "2026-11-13T15:00:00", "end": "2026-11-13T16:00:00"},
+    "owner": "lin"
+  },
+  {
+    "id": "M05",
+    "title": "双十一预热短视频",
+    "body_ref": "body/M05.md",
+    "requested_slot": {"start": "2026-11-14T10:00:00", "end": "2026-11-14T11:00:00"},
+    "owner": "lin"
+  }
+]

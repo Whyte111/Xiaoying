@@ -1,0 +1,86 @@
+{
+  "status": "NEEDS_CONFIRM",
+  "item": {
+    "material_id": "M03",
+    "audit_status": "WARN",
+    "risk_reasons": [
+      "标题含限制级用语（医疗/最），需人工确认"
+    ],
+    "suggested_slot": "2026-11-12 09:00-10:00",
+    "pending_items": [
+      {
+        "kind": "confirm",
+        "question": "请确认建议时段与风险处理后再保存草稿",
+        "blocks_save": false
+      },
+      {
+        "kind": "risk_warn",
+        "question": "规则 R002：标题含限制级用语（医疗/最），需人工确认，是否确认接受？",
+        "blocks_save": false
+      }
+    ],
+    "draft_status": "SAVED_CREATED"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "action": "fetch",
+      "tool": "read_material",
+      "args": {
+        "material_id": "M03"
+      },
+      "result_summary": "读取成功；标题=最全优惠清单，医疗级体验",
+      "rationale": "素材完整 → 下一步检查规则风险｜决策依据：素材尚未读取且草稿未保存，需先获取内容才能进行排期审核。"
+    },
+    {
+      "step": 2,
+      "action": "check",
+      "tool": "check_rules",
+      "args": {
+        "material_id": "M03"
+      },
+      "result_summary": "命中 1 条风险（block=0, warn=1）",
+      "rationale": "仅有 warn 风险 → 可保存但需列待确认｜决策依据：草稿尚未保存，需先核查素材与请求时段再决定后续，且不得发布。"
+    },
+    {
+      "step": 3,
+      "action": "query",
+      "tool": "query_slots",
+      "args": {
+        "slot": "2026-11-12 09:00-10:00"
+      },
+      "result_summary": "时段 2026-11-12 09:00-10:00 冲突 0 处",
+      "rationale": "无冲突 → 可直接保存草稿｜决策依据：标题含“最”“医疗”限制级用语且草稿未保存，需先查询确认风险与草稿状态，不能直接结束。"
+    },
+    {
+      "step": 4,
+      "action": "ask",
+      "tool": null,
+      "args": {},
+      "result_summary": "已生成确认请求",
+      "rationale": "改动需用户同意 → 请求确认而非直接保存｜决策依据：标题含“最”“医疗”等限制级用语触发warn，需人工确认后才能继续，且不得擅自改动用户硬性发布要求。"
+    },
+    {
+      "step": 5,
+      "action": "save",
+      "tool": "save_draft",
+      "args": {
+        "material_id": "M03",
+        "suggested_slot": "2026-11-12 09:00-10:00"
+      },
+      "result_summary": "保存结果=created，revision=1",
+      "rationale": "已写入草稿（仅草稿，未发布）｜决策依据：标题含“最”“医疗”等限制级用语需人工确认，先保存草稿且不发布，符合只存草稿的规则。"
+    },
+    {
+      "step": 6,
+      "action": "end",
+      "tool": null,
+      "args": {},
+      "result_summary": "流程结束",
+      "rationale": "已得到明确结论｜决策依据：标题含限制级用语需人工确认，草稿已保存且无其他可执行动作，故结束流程。"
+    }
+  ],
+  "trace_path": "examples\\traces\\m03-llm.jsonl",
+  "decision_source": "llm(deepseek-chat)",
+  "decision_degraded": false
+}

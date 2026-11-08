@@ -1,0 +1,5 @@
+{"step": 1, "action": "fetch", "tool": "read_material", "args": {"material_id": "M05"}, "result_summary": "读取成功；标题=双十一预热短视频", "rationale": "素材完整 → 下一步检查规则风险"}
+{"step": 2, "action": "check", "tool": "check_rules", "args": {"material_id": "M05"}, "result_summary": "命中 0 条风险（block=0, warn=0）", "rationale": "无风险 → 继续检查时段"}
+{"step": 3, "action": "query", "tool": "query_slots", "args": {"slot": "2026-11-14 10:00-11:00"}, "result_summary": "时段 2026-11-14 10:00-11:00 冲突 0 处", "rationale": "无冲突 → 可直接保存草稿"}
+{"step": 4, "action": "save", "tool": "save_draft", "args": {"material_id": "M05", "suggested_slot": "2026-11-14 10:00-11:00"}, "result_summary": "保存结果=created，revision=1", "rationale": "已写入草稿（仅草稿，未发布）"}
+{"step": 5, "action": "end", "tool": null, "args": {}, "result_summary": "流程结束", "rationale": "已得到明确结论"}

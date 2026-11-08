@@ -1,0 +1,46 @@
+{
+  "status": "BLOCKED",
+  "item": {
+    "material_id": "M04",
+    "audit_status": "BLOCKED",
+    "risk_reasons": [
+      "内部通知不得对外发布"
+    ],
+    "suggested_slot": "2026-11-13 15:00-16:00",
+    "pending_items": [],
+    "draft_status": "NOT_SAVED"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "action": "fetch",
+      "tool": "read_material",
+      "args": {
+        "material_id": "M04"
+      },
+      "result_summary": "读取成功；标题=内部通知：清仓处理",
+      "rationale": "素材完整 → 下一步检查规则风险"
+    },
+    {
+      "step": 2,
+      "action": "check",
+      "tool": "check_rules",
+      "args": {
+        "material_id": "M04"
+      },
+      "result_summary": "命中 1 条风险（block=1, warn=0）",
+      "rationale": "存在 block 风险 → 阻断保存"
+    },
+    {
+      "step": 3,
+      "action": "block",
+      "tool": null,
+      "args": {},
+      "result_summary": "已阻断",
+      "rationale": "存在 block 风险，不能生成草稿或发布"
+    }
+  ],
+  "trace_path": "examples\\traces\\m04-blocked.jsonl",
+  "decision_source": "policy（确定性策略，非模型）",
+  "decision_degraded": false
+}

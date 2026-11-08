@@ -1,0 +1,81 @@
+{
+  "status": "NEEDS_CONFIRM",
+  "item": {
+    "material_id": "M01",
+    "audit_status": "PASS",
+    "risk_reasons": [],
+    "suggested_slot": "2026-11-10 19:00-20:00",
+    "pending_items": [
+      {
+        "kind": "slot_change",
+        "question": "原时段 2026-11-10 18:00-19:00 已被占用，是否接受改到 2026-11-10 19:00-20:00？",
+        "blocks_save": false
+      }
+    ],
+    "draft_status": "SAVED_CREATED"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "action": "fetch",
+      "tool": "read_material",
+      "args": {
+        "material_id": "M01"
+      },
+      "result_summary": "读取成功；标题=秋季新品预热",
+      "rationale": "素材完整 → 下一步检查规则风险"
+    },
+    {
+      "step": 2,
+      "action": "check",
+      "tool": "check_rules",
+      "args": {
+        "material_id": "M01"
+      },
+      "result_summary": "命中 0 条风险（block=0, warn=0）",
+      "rationale": "无风险 → 继续检查时段"
+    },
+    {
+      "step": 3,
+      "action": "query",
+      "tool": "query_slots",
+      "args": {
+        "slot": "2026-11-10 18:00-19:00"
+      },
+      "result_summary": "时段 2026-11-10 18:00-19:00 冲突 1 处",
+      "rationale": "存在冲突 → 生成替代时段"
+    },
+    {
+      "step": 4,
+      "action": "reschedule",
+      "tool": null,
+      "args": {
+        "requested": "2026-11-10 18:00-19:00"
+      },
+      "result_summary": "候选 3 个：2026-11-10 19:00-20:00、2026-11-10 20:00-21:00、2026-11-10 21:00-22:00",
+      "rationale": "改时段等于改动硬性要求 → 必须标待确认"
+    },
+    {
+      "step": 5,
+      "action": "save",
+      "tool": "save_draft",
+      "args": {
+        "material_id": "M01",
+        "suggested_slot": "2026-11-10 19:00-20:00"
+      },
+      "result_summary": "保存结果=created，revision=1",
+      "rationale": "已写入草稿（仅草稿，未发布）"
+    },
+    {
+      "step": 6,
+      "action": "end",
+      "tool": null,
+      "args": {},
+      "result_summary": "流程结束",
+      "rationale": "已得到明确结论"
+    }
+  ],
+  "trace_path": "examples\\traces\\m01-conflict.jsonl",
+  "decision_source": "policy（确定性策略，非模型）",
+  "decision_degraded": false
+}

@@ -1,0 +1,5 @@
+{"step": 1, "action": "fetch", "tool": "read_material", "args": {"material_id": "M03"}, "result_summary": "读取成功；标题=最全优惠清单，医疗级体验", "rationale": "素材完整 → 下一步检查规则风险"}
+{"step": 2, "action": "check", "tool": "check_rules", "args": {"material_id": "M03"}, "result_summary": "命中 1 条风险（block=0, warn=1）", "rationale": "仅有 warn 风险 → 可保存但需列待确认"}
+{"step": 3, "action": "query", "tool": "query_slots", "args": {"slot": "2026-11-12 09:00-10:00"}, "result_summary": "时段 2026-11-12 09:00-10:00 冲突 0 处", "rationale": "无冲突 → 可直接保存草稿"}
+{"step": 4, "action": "save", "tool": "save_draft", "args": {"material_id": "M03", "suggested_slot": "2026-11-12 09:00-10:00"}, "result_summary": "保存结果=created，revision=1", "rationale": "已写入草稿（仅草稿，未发布）"}
+{"step": 5, "action": "end", "tool": null, "args": {}, "result_summary": "流程结束", "rationale": "已得到明确结论"}

@@ -1,0 +1,6 @@
+{"step": 1, "action": "fetch", "tool": "read_material", "args": {"material_id": "M01"}, "result_summary": "读取成功；标题=秋季新品预热", "rationale": "素材完整 → 下一步检查规则风险｜决策依据：素材尚未读取且草稿未保存，需先获取素材内容才能进行排期审核。"}
+{"step": 2, "action": "check", "tool": "check_rules", "args": {"material_id": "M01"}, "result_summary": "命中 0 条风险（block=0, warn=0）", "rationale": "无风险 → 继续检查时段｜决策依据：素材尚未保存草稿，需先核查标题与请求时段等排期信息，且不得擅自更改用户硬性发布要求。"}
+{"step": 3, "action": "query", "tool": "query_slots", "args": {"slot": "2026-11-10 18:00-19:00"}, "result_summary": "时段 2026-11-10 18:00-19:00 冲突 1 处", "rationale": "存在冲突 → 生成替代时段｜决策依据：素材M01尚无草稿且无风险，需先查询确认状态再决定后续，不能直接结束。"}
+{"step": 4, "action": "reschedule", "tool": null, "args": {"requested": "2026-11-10 18:00-19:00"}, "result_summary": "候选 3 个：2026-11-10 19:00-20:00、2026-11-10 20:00-21:00、2026-11-10 21:00-22:00", "rationale": "改时段等于改动硬性要求 → 必须标待确认｜决策依据：请求时段与 SCHED-001 冲突，需改时段并标为待确认，不能擅自更改用户硬性要求。"}
+{"step": 5, "action": "save", "tool": "save_draft", "args": {"material_id": "M01", "suggested_slot": "2026-11-10 19:00-20:00"}, "result_summary": "保存结果=created，revision=1", "rationale": "已写入草稿（仅草稿，未发布）｜决策依据：素材无规则风险，但请求时段与SCHED-001冲突，需先保存草稿并将替代时段标为待确认，不擅自更改硬性发布要求。"}
+{"step": 6, "action": "end", "tool": null, "args": {}, "result_summary": "流程结束", "rationale": "已得到明确结论｜决策依据：草稿已保存且无发布动作，时段冲突需人工确认，当前无其他候选动作可选。"}
