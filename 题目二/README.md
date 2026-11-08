@@ -106,5 +106,6 @@ docs/           需求、设计、评估、AI 使用、复盘
 ## 提交信息
 
 - 题号：题目二
-- GitHub URL：待填
-- commit SHA：待填
+- 仓库：<https://github.com/Whyte111/Xiaoying>
+- 目录：`题目二/`
+- commit SHA：以本目录最新提交为准（`git log -1 --format=%H -- 题目二`）
