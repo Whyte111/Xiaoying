@@ -1,0 +1,14 @@
+# 密钥与本地环境，绝不提交
+.env
+.env.local
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# 运行产物（示例 trace 需要保留，故不忽略 examples/runs）

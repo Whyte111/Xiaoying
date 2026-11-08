@@ -1,0 +1,88 @@
+{
+  "status": "completed",
+  "reason": "时长与规则检查均通过",
+  "error_code": null,
+  "script": {
+    "title": "把重复剪辑交给工具：一个创作者的成片流程",
+    "shots": [
+      {
+        "shot_id": "s1",
+        "narration": "开场：现在做短视频的人越来越多，真正卡住大家的往往不是创意，",
+        "visual": "手持手机拍摄的创作者，画面由暗转亮",
+        "subtitle": "创意不缺，流程太累",
+        "material_ids": [
+          "P01"
+        ],
+        "fact_refs": [
+          {
+            "material_id": "P01",
+            "fact": "支持字幕"
+          }
+        ],
+        "duration_s": 6.0
+      },
+      {
+        "shot_id": "s2",
+        "narration": "中段：这款智能剪辑器续航 12 小时，把素材整理好以后就可以直接进入成片环节，",
+        "visual": "产品界面特写，字幕图层出现",
+        "subtitle": "把重复操作交给工具",
+        "material_ids": [
+          "P02"
+        ],
+        "fact_refs": [
+          {
+            "material_id": "P02",
+            "fact": "续航 12 小时"
+          }
+        ],
+        "duration_s": 7.4
+      },
+      {
+        "shot_id": "s3",
+        "narration": "细节：出片之前可以再确认一遍画面与文字信息，避免返工，",
+        "visual": "屏幕录制，导出设置面板",
+        "subtitle": "出片前再确认一遍",
+        "material_ids": [
+          "P01"
+        ],
+        "fact_refs": [
+          {
+            "material_id": "P01",
+            "fact": "支持字幕"
+          }
+        ],
+        "duration_s": 5.4
+      },
+      {
+        "shot_id": "s4",
+        "narration": "收尾：如果你也在为成片流程发愁，可以先从基础功能试起，",
+        "visual": "创作者点击发布，微笑",
+        "subtitle": "先从基础功能试起",
+        "material_ids": [
+          "P01"
+        ],
+        "fact_refs": [
+          {
+            "material_id": "P01",
+            "fact": "支持字幕"
+          }
+        ],
+        "duration_s": 5.4
+      }
+    ],
+    "risks": [
+      "当前素材仅包含产品功能描述，不含任何效果或性能数据"
+    ],
+    "estimated_total_s": 24.2,
+    "material_refs": [
+      "P01",
+      "P02"
+    ],
+    "target_duration_s": 30.0,
+    "status": "completed"
+  },
+  "partial": null,
+  "steps_used": 7,
+  "tool_calls_used": 6,
+  "trace_path": "examples\\runs\\01_normal.mock.trace.jsonl"
+}

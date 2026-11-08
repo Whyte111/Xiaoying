@@ -1,0 +1,109 @@
+{
+  "status": "completed",
+  "reason": "时长与规则检查均通过",
+  "error_code": null,
+  "script": {
+    "title": "智能剪辑器功能速览",
+    "shots": [
+      {
+        "shot_id": "s1",
+        "narration": "支持字幕",
+        "visual": "剪辑界面演示，字幕条出现在画面上",
+        "subtitle": "支持字幕",
+        "material_ids": [
+          "P01"
+        ],
+        "fact_refs": [
+          {
+            "material_id": "P01",
+            "fact": "支持字幕"
+          }
+        ],
+        "duration_s": 1.0
+      },
+      {
+        "shot_id": "s2",
+        "narration": "支持横竖屏切换",
+        "visual": "画面在横屏与竖屏之间切换",
+        "subtitle": "支持横竖屏切换",
+        "material_ids": [
+          "P01"
+        ],
+        "fact_refs": [
+          {
+            "material_id": "P01",
+            "fact": "支持横竖屏切换"
+          }
+        ],
+        "duration_s": 1.4
+      },
+      {
+        "shot_id": "s3",
+        "narration": "支持多段素材拼接",
+        "visual": "多段素材拖入时间线拼接",
+        "subtitle": "支持多段素材拼接",
+        "material_ids": [
+          "P01"
+        ],
+        "fact_refs": [
+          {
+            "material_id": "P01",
+            "fact": "支持多段素材拼接"
+          }
+        ],
+        "duration_s": 1.6
+      },
+      {
+        "shot_id": "s4",
+        "narration": "续航 12 小时",
+        "visual": "续航时间标识展示",
+        "subtitle": "续航 12 小时",
+        "material_ids": [
+          "P02"
+        ],
+        "fact_refs": [
+          {
+            "material_id": "P02",
+            "fact": "续航 12 小时"
+          }
+        ],
+        "duration_s": 1.2
+      },
+      {
+        "shot_id": "s5",
+        "narration": "支持 1080P 导出",
+        "visual": "导出设置界面选择 1080P 与 MP4",
+        "subtitle": "支持 1080P 导出 / 导出格式为 MP4",
+        "material_ids": [
+          "P02"
+        ],
+        "fact_refs": [
+          {
+            "material_id": "P02",
+            "fact": "支持 1080P 导出"
+          },
+          {
+            "material_id": "P02",
+            "fact": "导出格式为 MP4"
+          }
+        ],
+        "duration_s": 1.8
+      }
+    ],
+    "risks": [
+      "目标时长仅 7 秒，逐一覆盖全部功能点可能导致总时长超出，需 estimate 后按需 compress",
+      "素材未提供效率类数据，脚本中不出现任何效果提升结论"
+    ],
+    "estimated_total_s": 7.0,
+    "material_refs": [
+      "P01",
+      "P02"
+    ],
+    "target_duration_s": 7.0,
+    "status": "completed"
+  },
+  "partial": null,
+  "steps_used": 7,
+  "tool_calls_used": 6,
+  "trace_path": "C:\\Users\\12158\\Desktop\\小影\\题目四\\examples\\runs\\02_overrun.deepseek.trace.jsonl"
+}

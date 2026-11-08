@@ -1,0 +1,66 @@
+{
+  "status": "incomplete",
+  "reason": "工具判定无法满足：目标 0.9s 无法容纳 2 个分镜（每镜至少 1 秒），请减少分镜数或提高目标时长",
+  "error_code": "UNSATISFIABLE",
+  "script": null,
+  "partial": {
+    "title": "智能剪辑器功能速览",
+    "shots": [
+      {
+        "shot_id": "s1",
+        "narration": "支持字幕，支持横竖屏切换，支持多段素材拼接。",
+        "visual": "剪辑器界面快速展示字幕、横竖屏切换与多段拼接",
+        "subtitle": "支持字幕 横竖屏切换 多段素材拼接",
+        "material_ids": [
+          "P01"
+        ],
+        "fact_refs": [
+          {
+            "material_id": "P01",
+            "fact": "支持字幕"
+          },
+          {
+            "material_id": "P01",
+            "fact": "支持横竖屏切换"
+          },
+          {
+            "material_id": "P01",
+            "fact": "支持多段素材拼接"
+          }
+        ],
+        "duration_s": 4.4
+      },
+      {
+        "shot_id": "s2",
+        "narration": "续航12小时，支持1080P导出，导出格式为MP4。",
+        "visual": "导出界面展示1080P与MP4格式，续航标注",
+        "subtitle": "续航12小时 1080P导出 MP4",
+        "material_ids": [
+          "P02"
+        ],
+        "fact_refs": [
+          {
+            "material_id": "P02",
+            "fact": "续航 12 小时"
+          },
+          {
+            "material_id": "P02",
+            "fact": "支持 1080P 导出"
+          },
+          {
+            "material_id": "P02",
+            "fact": "导出格式为 MP4"
+          }
+        ],
+        "duration_s": 5.2
+      }
+    ],
+    "risks": [
+      "目标时长仅0.9秒，完整覆盖全部功能点后总时长必然超出，需压缩"
+    ],
+    "estimated_total_s": 9.6
+  },
+  "steps_used": 4,
+  "tool_calls_used": 4,
+  "trace_path": "C:\\Users\\12158\\Desktop\\小影\\题目四\\examples\\runs\\03_unsatisfiable.deepseek.trace.jsonl"
+}

@@ -1,0 +1,10 @@
+{
+  "status": "needs_input",
+  "reason": "素材库里没有检索到「智能咖啡机」相关的产品素材（试过“智能咖啡机”“咖啡机 办公室”都没有结果）。请补充该产品的素材或素材 ID（例如产品参数、卖点文案、可用功能说明），我再据此写脚本；否则无法保证不编造功能。",
+  "error_code": "SEARCH_EMPTY",
+  "script": null,
+  "partial": null,
+  "steps_used": 3,
+  "tool_calls_used": 2,
+  "trace_path": "C:\\Users\\12158\\Desktop\\小影\\题目四\\examples\\runs\\05_no_material.deepseek.trace.jsonl"
+}

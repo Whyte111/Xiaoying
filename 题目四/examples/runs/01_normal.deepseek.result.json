@@ -1,0 +1,125 @@
+{
+  "status": "completed",
+  "reason": "时长与规则检查均通过",
+  "error_code": null,
+  "script": {
+    "title": "智能剪辑器：字幕、横竖屏、多段拼接一次搞定",
+    "shots": [
+      {
+        "shot_id": "s1",
+        "narration": "做短视频，剪辑工具得顺手。",
+        "visual": "创作者手持手机面对镜头，屏幕上是剪辑界面",
+        "subtitle": "剪辑工具得顺手",
+        "material_ids": [
+          "P01"
+        ],
+        "fact_refs": [
+          {
+            "material_id": "P01",
+            "fact": "支持字幕"
+          }
+        ],
+        "duration_s": 2.6
+      },
+      {
+        "shot_id": "s2",
+        "narration": "这款智能剪辑器支持字幕。",
+        "visual": "字幕条出现在画面下方，创作者点头",
+        "subtitle": "支持字幕",
+        "material_ids": [
+          "P01"
+        ],
+        "fact_refs": [
+          {
+            "material_id": "P01",
+            "fact": "支持字幕"
+          }
+        ],
+        "duration_s": 2.4
+      },
+      {
+        "shot_id": "s3",
+        "narration": "支持横竖屏切换，一条内容多平台发。",
+        "visual": "画面从竖屏切到横屏，展示同一段内容",
+        "subtitle": "支持横竖屏切换",
+        "material_ids": [
+          "P01"
+        ],
+        "fact_refs": [
+          {
+            "material_id": "P01",
+            "fact": "支持横竖屏切换"
+          }
+        ],
+        "duration_s": 3.4
+      },
+      {
+        "shot_id": "s4",
+        "narration": "支持多段素材拼接，素材一次排好。",
+        "visual": "时间线上多段素材依次排列拼接",
+        "subtitle": "支持多段素材拼接",
+        "material_ids": [
+          "P01"
+        ],
+        "fact_refs": [
+          {
+            "material_id": "P01",
+            "fact": "支持多段素材拼接"
+          }
+        ],
+        "duration_s": 3.2
+      },
+      {
+        "shot_id": "s5",
+        "narration": "支持1080P导出，导出格式为MP4。",
+        "visual": "导出界面显示1080P与MP4选项",
+        "subtitle": "支持1080P导出 / 导出格式为MP4",
+        "material_ids": [
+          "P02"
+        ],
+        "fact_refs": [
+          {
+            "material_id": "P02",
+            "fact": "支持 1080P 导出"
+          },
+          {
+            "material_id": "P02",
+            "fact": "导出格式为 MP4"
+          }
+        ],
+        "duration_s": 3.8
+      },
+      {
+        "shot_id": "s6",
+        "narration": "续航12小时，出门也能接着剪。",
+        "visual": "创作者在户外继续剪辑，电量图标显示充足",
+        "subtitle": "续航 12 小时",
+        "material_ids": [
+          "P02"
+        ],
+        "fact_refs": [
+          {
+            "material_id": "P02",
+            "fact": "续航 12 小时"
+          }
+        ],
+        "duration_s": 3.0
+      }
+    ],
+    "risks": [
+      "素材未提供剪辑速度、AI能力等卖点，脚本仅复述字幕、横竖屏切换、多段拼接、1080P导出、MP4格式与续航，未涉及效率提升等效果数据",
+      "续航12小时为素材原文表述，未说明测试条件，口播中不做额外承诺"
+    ],
+    "estimated_total_s": 18.4,
+    "material_refs": [
+      "P01",
+      "P02"
+    ],
+    "target_duration_s": 30.0,
+    "status": "completed"
+  },
+  "partial": null,
+  "steps_used": 5,
+  "tool_calls_used": 4,
+  "trace_path": "C:\\Users\\12158\\Desktop\\小影\\题目四\\examples\\runs\\01_normal.deepseek.trace.jsonl"
+}

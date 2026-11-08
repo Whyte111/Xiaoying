@@ -1,0 +1,22 @@
+{
+  "generic": {
+    "display_name": "通用短视频",
+    "words_per_second": 4.5,
+    "max_duration_s": 60
+  },
+  "douyin": {
+    "display_name": "抖音",
+    "words_per_second": 5.0,
+    "max_duration_s": 60
+  },
+  "xiaohongshu": {
+    "display_name": "小红书",
+    "words_per_second": 4.5,
+    "max_duration_s": 60
+  },
+  "bilibili": {
+    "display_name": "B站",
+    "words_per_second": 4.0,
+    "max_duration_s": 120
+  }
+}

@@ -1,0 +1,16 @@
+# 依赖说明
+
+本项目**只使用 Python 标准库**，没有任何第三方依赖。
+
+- Python >= 3.9
+- 不需要 `pip install`
+- 打包/部署时只需复制整个目录
+
+如果你希望用虚拟环境隔离：
+
+```bash
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# macOS/Linux: source .venv/bin/activate
+# 无需 pip install
+```
