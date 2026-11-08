@@ -31,10 +31,17 @@ class MockModel:
                     "尚未检索素材，先按主题检索，避免凭空编造产品事实",
                 )
             if not state.search_hit:
+                tried_rewrite = any(o.action == "rewrite_query" for o in state.observations)
+                if not tried_rewrite:
+                    return ActionDecision(
+                        "rewrite_query",
+                        {"query": task.topic},
+                        "首次检索无结果，先换关键词重试，而不是直接请求补充",
+                    )
                 return ActionDecision(
                     "ask_clarify",
                     {"question": "没有检索到可用素材，请补充产品资料或指定素材 ID。"},
-                    "检索无结果，且不允许编造事实，因此请求补充",
+                    "多次检索无结果，且不允许编造事实，因此请求补充",
                 )
             return ActionDecision(
                 "compose", self._first_draft(state), "已有素材，生成首稿"
@@ -83,27 +90,30 @@ class MockModel:
         def at(i: int) -> Tuple[str, str]:
             return anchors[i if i < len(anchors) else 0]
 
-        specs = [
+        # Mock 按 4.5 字/秒估算，并刻意写到目标的约 1.15 倍：
+        # 这样离线跑也能演示"超时长 → compress → 通过"的修正闭环。
+        target = float(state.task.target_duration_s or 30)
+        budget = max(12, int(target * 4.5 * 1.25))
+        shot_count = 4 if budget >= 48 else (3 if budget >= 30 else 2)
+        per_shot = max(3, budget // shot_count)
+
+        base = [
             (
-                0,
                 "手持手机拍摄的创作者，画面由暗转亮",
                 "开场：现在做短视频的人越来越多，真正卡住大家的往往不是创意，而是拍完之后整理素材再到剪出成片这一整段流程，重复又耗时。",
                 "创意不缺，流程太累",
             ),
             (
-                1,
                 "产品界面特写，字幕图层出现",
                 "中段：这款智能剪辑器{fact}，把素材整理好以后就可以直接进入成片环节，把重复的机械操作交给工具处理。",
                 "把重复操作交给工具",
             ),
             (
-                2,
                 "屏幕录制，导出设置面板",
                 "细节：出片之前可以再确认一遍画面与文字信息，避免返工，让一个人做号也能把流程跑顺。",
                 "出片前再确认一遍",
             ),
             (
-                0,
                 "创作者点击发布，微笑",
                 "收尾：如果你也在为成片流程发愁，可以先从基础功能试起，再决定要不要把整套工作流搬过来。",
                 "先从基础功能试起",
@@ -111,13 +121,14 @@ class MockModel:
         ]
 
         shots = []
-        for idx, (anchor_idx, visual, narration_tpl, subtitle) in enumerate(specs, start=1):
-            mid, fact = at(anchor_idx)
+        for i in range(shot_count):
+            mid, fact = at(i)
+            visual, template, subtitle = base[i]
             shots.append(
                 {
-                    "shot_id": "s{n}".format(n=idx),
+                    "shot_id": "s{n}".format(n=i + 1),
                     "visual": visual,
-                    "narration": narration_tpl.format(fact=fact) if "{fact}" in narration_tpl else narration_tpl,
+                    "narration": template.format(fact=fact)[:per_shot],
                     "subtitle": subtitle,
                     "material_ids": [mid],
                     "fact_refs": [{"material_id": mid, "fact": fact}],
