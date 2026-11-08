@@ -1,0 +1,9 @@
+{
+  "topic": "秋季校园活动",
+  "budget": 10.0,
+  "deadline": "2026-11-20",
+  "injected_failure": [
+    "generate_script"
+  ],
+  "description": "工具失败：脚本生成失败一次，降级为单素材重试后完成"
+}

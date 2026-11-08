@@ -1,0 +1,34 @@
+{
+  "materials": [
+    {"id": "m1", "title": "秋季校园活动策划要点", "tags": ["秋季", "校园", "活动"], "cost": 0.0, "duration": 0.5},
+    {"id": "m2", "title": "低成本内容运营模板", "tags": ["成本", "模板", "运营"], "cost": 0.0, "duration": 0.5},
+    {"id": "m3", "title": "短视频脚本结构参考", "tags": ["脚本", "短视频"], "cost": 0.0, "duration": 0.5}
+  ],
+  "script_template": {
+    "title_prefix": "脚本：",
+    "est_cost": 1.0,
+    "est_duration": 2.0
+  },
+  "fee_table": {
+    "search_material": {"cost": 0.1, "duration": 0.2},
+    "generate_script": {"cost": 0.2, "duration": 0.3},
+    "estimate_cost": {"cost": 0.1, "duration": 0.1},
+    "save_plan": {"cost": 0.1, "duration": 0.1}
+  },
+  "plan_options": [
+    {
+      "id": "A",
+      "name": "主方案（完整版）",
+      "est_cost": 12.0,
+      "est_duration": 6.0,
+      "items": ["素材整理", "脚本打磨", "双平台投放", "数据复盘"]
+    },
+    {
+      "id": "B",
+      "name": "替代方案（精简版）",
+      "est_cost": 8.0,
+      "est_duration": 4.0,
+      "items": ["素材整理", "脚本精简", "单平台投放"]
+    }
+  ]
+}

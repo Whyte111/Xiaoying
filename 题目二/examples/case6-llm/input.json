@@ -1,0 +1,8 @@
+{
+  "topic": "秋季校园活动",
+  "budget": 10.0,
+  "deadline": "2026-11-20",
+  "provider": "llm",
+  "model": "deepseek-chat",
+  "description": "真实模型（DeepSeek）驱动完整闭环：自行检索→生成→估算→发现超预算改选 B→保存→结束，全程无降级"
+}

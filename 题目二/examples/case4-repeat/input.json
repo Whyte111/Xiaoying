@@ -1,0 +1,7 @@
+{
+  "topic": "秋季校园活动",
+  "budget": 10.0,
+  "deadline": "2026-11-20",
+  "injected_failure": [],
+  "description": "重复执行：第二次命中已完成记录，复用结果且不重复保存"
+}

@@ -1,0 +1,7 @@
+{
+  "topic": "秋季校园活动",
+  "budget": 10.0,
+  "deadline": null,
+  "injected_failure": [],
+  "description": "输入不足：缺截止时间，直接返回未完成，不调用任何工具"
+}

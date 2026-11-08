@@ -1,0 +1,279 @@
+{
+  "status": "completed",
+  "topic": "校园安全宣传",
+  "budget": 10.0,
+  "total_cost": 8.9,
+  "plan_cost": 8.0,
+  "tool_fee": 0.9,
+  "plan": [
+    {
+      "step_id": "s1",
+      "name": "检索素材",
+      "tool": "search_material",
+      "deps": [],
+      "status": "succeeded",
+      "est_cost": 0.0
+    },
+    {
+      "step_id": "s2",
+      "name": "生成脚本",
+      "tool": "generate_script",
+      "deps": [
+        "s1"
+      ],
+      "status": "succeeded",
+      "est_cost": 0.0
+    },
+    {
+      "step_id": "s3",
+      "name": "成本估算",
+      "tool": "estimate_cost",
+      "deps": [
+        "s2"
+      ],
+      "status": "succeeded",
+      "est_cost": 0.0
+    },
+    {
+      "step_id": "s4",
+      "name": "保存方案",
+      "tool": "save_plan",
+      "deps": [
+        "s3"
+      ],
+      "status": "succeeded",
+      "est_cost": 0.0
+    }
+  ],
+  "tool_results": [
+    {
+      "ok": true,
+      "tool": "search_material",
+      "args": {
+        "query": "校园安全宣传"
+      },
+      "data": {
+        "count": 0,
+        "materials": []
+      },
+      "error_code": null,
+      "error_msg": null,
+      "cost": 0.1,
+      "duration_ms": 0.01
+    },
+    {
+      "ok": true,
+      "tool": "search_material",
+      "args": {
+        "query": ""
+      },
+      "data": {
+        "count": 3,
+        "materials": [
+          {
+            "id": "m1",
+            "title": "秋季校园活动策划要点",
+            "tags": [
+              "秋季",
+              "校园",
+              "活动"
+            ],
+            "cost": 0.0,
+            "duration": 0.5
+          },
+          {
+            "id": "m2",
+            "title": "低成本内容运营模板",
+            "tags": [
+              "成本",
+              "模板",
+              "运营"
+            ],
+            "cost": 0.0,
+            "duration": 0.5
+          },
+          {
+            "id": "m3",
+            "title": "短视频脚本结构参考",
+            "tags": [
+              "脚本",
+              "短视频"
+            ],
+            "cost": 0.0,
+            "duration": 0.5
+          }
+        ]
+      },
+      "error_code": null,
+      "error_msg": null,
+      "cost": 0.1,
+      "duration_ms": 0.01
+    },
+    {
+      "ok": true,
+      "tool": "generate_script",
+      "args": {
+        "material_ids": [
+          "m1",
+          "m2",
+          "m3"
+        ]
+      },
+      "data": {
+        "script_id": "sc-d18c93",
+        "title": "脚本：秋季校园活动策划要点、低成本内容运营模板、短视频脚本结构参考",
+        "based_on": [
+          "m1",
+          "m2",
+          "m3"
+        ],
+        "est_cost": 1.0,
+        "est_duration": 2.0
+      },
+      "error_code": null,
+      "error_msg": null,
+      "cost": 0.2,
+      "duration_ms": 0.03
+    },
+    {
+      "ok": true,
+      "tool": "estimate_cost",
+      "args": {
+        "option_id": "A"
+      },
+      "data": {
+        "option_id": "A",
+        "name": "主方案（完整版）",
+        "items": [
+          "素材整理",
+          "脚本打磨",
+          "双平台投放",
+          "数据复盘"
+        ],
+        "total_cost": 12.0,
+        "est_duration": 6.0
+      },
+      "error_code": null,
+      "error_msg": null,
+      "cost": 0.1,
+      "duration_ms": 0.01
+    },
+    {
+      "ok": true,
+      "tool": "estimate_cost",
+      "args": {
+        "option_id": "B"
+      },
+      "data": {
+        "option_id": "B",
+        "name": "替代方案（精简版）",
+        "items": [
+          "素材整理",
+          "脚本精简",
+          "单平台投放"
+        ],
+        "total_cost": 8.0,
+        "est_duration": 4.0
+      },
+      "error_code": null,
+      "error_msg": null,
+      "cost": 0.1,
+      "duration_ms": 0.01
+    },
+    {
+      "ok": false,
+      "tool": "save_plan",
+      "args": {
+        "topic": "校园安全宣传",
+        "option_id": "B",
+        "total_cost": 8.7,
+        "script": {
+          "script_id": "sc-d18c93",
+          "title": "脚本：秋季校园活动策划要点、低成本内容运营模板、短视频脚本结构参考",
+          "based_on": [
+            "m1",
+            "m2",
+            "m3"
+          ],
+          "est_cost": 1.0,
+          "est_duration": 2.0
+        }
+      },
+      "data": {},
+      "error_code": "BROKEN",
+      "error_msg": "注入的永久故障（示例用）",
+      "cost": 0.1,
+      "duration_ms": 0.0
+    },
+    {
+      "ok": false,
+      "tool": "save_plan",
+      "args": {
+        "topic": "校园安全宣传",
+        "option_id": "B",
+        "total_cost": 8.8,
+        "script": {
+          "script_id": "sc-d18c93",
+          "title": "脚本：秋季校园活动策划要点、低成本内容运营模板、短视频脚本结构参考",
+          "based_on": [
+            "m1",
+            "m2",
+            "m3"
+          ],
+          "est_cost": 1.0,
+          "est_duration": 2.0
+        }
+      },
+      "data": {},
+      "error_code": "BROKEN",
+      "error_msg": "注入的永久故障（示例用）",
+      "cost": 0.1,
+      "duration_ms": 0.0
+    },
+    {
+      "ok": true,
+      "tool": "save_plan",
+      "args": {
+        "topic": "校园安全宣传",
+        "option_id": "B",
+        "total_cost": 8.9,
+        "script": {
+          "script_id": "sc-d18c93",
+          "title": "脚本：秋季校园活动策划要点、低成本内容运营模板、短视频脚本结构参考",
+          "based_on": [
+            "m1",
+            "m2",
+            "m3"
+          ],
+          "est_cost": 1.0,
+          "est_duration": 2.0
+        }
+      },
+      "data": {
+        "artifact_id": "plan-d7d2f1e7",
+        "path": "examples/case8-resume/plan-d7d2f1e7.json",
+        "option_id": "B"
+      },
+      "error_code": null,
+      "error_msg": null,
+      "cost": 0.1,
+      "duration_ms": 1.61
+    }
+  ],
+  "violations": [],
+  "saved_artifact": {
+    "artifact_id": "plan-d7d2f1e7",
+    "path": "examples/case8-resume/plan-d7d2f1e7.json",
+    "option_id": "B"
+  },
+  "blocked_reason": null,
+  "rounds": 2,
+  "tool_calls": 1,
+  "trace_path": "examples/case8-resume/trace.json",
+  "fingerprint": "d0902c9be9d20560",
+  "reused": false,
+  "time_checked": false,
+  "provider": "mock",
+  "resumed": true,
+  "fallback_calls": 0
+}

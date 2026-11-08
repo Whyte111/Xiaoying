@@ -1,0 +1,125 @@
+[
+  {
+    "round": 1,
+    "action": "call_tool",
+    "tool": "search_material",
+    "args": {
+      "query": "秋季校园活动"
+    },
+    "reason": "尚无素材，先检索",
+    "note": "工具成功",
+    "source": "mock",
+    "ok": true,
+    "cost": 0.1,
+    "summary": {
+      "count": 1
+    }
+  },
+  {
+    "round": 2,
+    "action": "call_tool",
+    "tool": "generate_script",
+    "args": {
+      "material_ids": [
+        "m1"
+      ]
+    },
+    "reason": "已获得 1 条素材，生成脚本",
+    "note": "工具失败: INJECTED_FAILURE",
+    "source": "mock",
+    "ok": false,
+    "cost": 0.2,
+    "summary": {
+      "error_code": "INJECTED_FAILURE",
+      "error_msg": "注入的故障：generate_script 调用失败"
+    }
+  },
+  {
+    "round": 3,
+    "action": "call_tool",
+    "tool": "generate_script",
+    "args": {
+      "material_ids": [
+        "m1"
+      ]
+    },
+    "reason": "上次脚本生成失败，降级为单素材（m1）重试",
+    "note": "工具成功",
+    "source": "mock",
+    "ok": true,
+    "cost": 0.2,
+    "summary": {
+      "script_id": "sc-ae23b9"
+    }
+  },
+  {
+    "round": 4,
+    "action": "call_tool",
+    "tool": "estimate_cost",
+    "args": {
+      "option_id": "A"
+    },
+    "reason": "估算方案 A 的成本",
+    "note": "工具成功",
+    "source": "mock",
+    "ok": true,
+    "cost": 0.1,
+    "summary": {
+      "option_id": "A",
+      "total_cost": 12.0
+    }
+  },
+  {
+    "round": 5,
+    "action": "call_tool",
+    "tool": "estimate_cost",
+    "args": {
+      "option_id": "B"
+    },
+    "reason": "方案 A 预计总花费 12.70（方案 12.00 + 已付工具费 0.60 + 保存费 0.10）超出预算 10.00，缺口 2.70；改选方案 B 重新估算",
+    "note": "工具成功",
+    "source": "mock",
+    "ok": true,
+    "cost": 0.1,
+    "summary": {
+      "option_id": "B",
+      "total_cost": 8.0
+    }
+  },
+  {
+    "round": 6,
+    "action": "call_tool",
+    "tool": "save_plan",
+    "args": {
+      "topic": "秋季校园活动",
+      "option_id": "B",
+      "total_cost": 8.8,
+      "script": {
+        "script_id": "sc-ae23b9",
+        "title": "脚本：秋季校园活动策划要点",
+        "based_on": [
+          "m1"
+        ],
+        "est_cost": 1.0,
+        "est_duration": 2.0
+      }
+    },
+    "reason": "方案 B 预计总花费 8.80 在预算内，保存",
+    "note": "工具成功",
+    "source": "mock",
+    "ok": true,
+    "cost": 0.1,
+    "summary": {
+      "artifact_id": "plan-fc8dfe2f"
+    }
+  },
+  {
+    "round": 7,
+    "action": "finish",
+    "tool": null,
+    "args": {},
+    "reason": "方案已保存，任务完成",
+    "note": "结束",
+    "source": "mock"
+  }
+]

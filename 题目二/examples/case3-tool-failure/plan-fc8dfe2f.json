@@ -1,0 +1,26 @@
+{
+  "artifact_id": "plan-fc8dfe2f",
+  "topic": "秋季校园活动",
+  "option": {
+    "id": "B",
+    "name": "替代方案（精简版）",
+    "est_cost": 8.0,
+    "est_duration": 4.0,
+    "items": [
+      "素材整理",
+      "脚本精简",
+      "单平台投放"
+    ]
+  },
+  "script": {
+    "script_id": "sc-ae23b9",
+    "title": "脚本：秋季校园活动策划要点",
+    "based_on": [
+      "m1"
+    ],
+    "est_cost": 1.0,
+    "est_duration": 2.0
+  },
+  "plan_cost": 8.0,
+  "total_cost": 8.8
+}

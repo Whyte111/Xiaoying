@@ -1,0 +1,7 @@
+{
+  "topic": "秋季校园活动",
+  "budget": 5.0,
+  "deadline": "2026-11-20",
+  "injected_failure": [],
+  "description": "预算超限：两个方案都超预算，返回未完成与缺口，不保存"
+}

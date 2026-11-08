@@ -1,0 +1,28 @@
+{
+  "artifact_id": "plan-d7d2f1e7",
+  "topic": "校园安全宣传",
+  "option": {
+    "id": "B",
+    "name": "替代方案（精简版）",
+    "est_cost": 8.0,
+    "est_duration": 4.0,
+    "items": [
+      "素材整理",
+      "脚本精简",
+      "单平台投放"
+    ]
+  },
+  "script": {
+    "script_id": "sc-d18c93",
+    "title": "脚本：秋季校园活动策划要点、低成本内容运营模板、短视频脚本结构参考",
+    "based_on": [
+      "m1",
+      "m2",
+      "m3"
+    ],
+    "est_cost": 1.0,
+    "est_duration": 2.0
+  },
+  "plan_cost": 8.0,
+  "total_cost": 8.9
+}

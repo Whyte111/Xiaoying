@@ -1,0 +1,9 @@
+{
+  "topic": "校园安全宣传",
+  "budget": 10.0,
+  "deadline": "2026-11-25",
+  "injected_failure": [
+    "save_plan"
+  ],
+  "description": "失败续跑：第 1 次保存永久失败，第 2 次继承前 3 步结果，只补跑保存"
+}

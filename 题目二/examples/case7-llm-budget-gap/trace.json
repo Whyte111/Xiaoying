@@ -1,0 +1,79 @@
+[
+  {
+    "round": 1,
+    "action": "call_tool",
+    "tool": "search_material",
+    "args": {
+      "query": "秋季校园活动"
+    },
+    "reason": "先检索素材，为后续脚本生成打基础",
+    "note": "工具成功",
+    "source": "llm",
+    "ok": true,
+    "cost": 0.1,
+    "summary": {
+      "count": 1
+    }
+  },
+  {
+    "round": 2,
+    "action": "call_tool",
+    "tool": "generate_script",
+    "args": {
+      "material_ids": [
+        "m1"
+      ]
+    },
+    "reason": "素材已检索到，下一步基于 m1 生成脚本",
+    "note": "工具成功",
+    "source": "llm",
+    "ok": true,
+    "cost": 0.2,
+    "summary": {
+      "script_id": "sc-ae23b9"
+    }
+  },
+  {
+    "round": 3,
+    "action": "call_tool",
+    "tool": "estimate_cost",
+    "args": {
+      "option_id": "A"
+    },
+    "reason": "脚本已生成，下一步估算方案A成本以核对预算",
+    "note": "工具成功",
+    "source": "llm",
+    "ok": true,
+    "cost": 0.1,
+    "summary": {
+      "option_id": "A",
+      "total_cost": 12.0
+    }
+  },
+  {
+    "round": 4,
+    "action": "call_tool",
+    "tool": "estimate_cost",
+    "args": {
+      "option_id": "B"
+    },
+    "reason": "方案 A 超预算，尝试未用过的方案 B 估算成本",
+    "note": "工具成功",
+    "source": "llm",
+    "ok": true,
+    "cost": 0.1,
+    "summary": {
+      "option_id": "B",
+      "total_cost": 8.0
+    }
+  },
+  {
+    "round": 5,
+    "action": "stop",
+    "tool": null,
+    "args": {},
+    "reason": "方案 A、B 均已尝试且均超预算（B 预计总花费 8.60，预算 5.00，缺口 3.60），tried_options 之外无其他可选方案，无法在预算内保存方案。",
+    "note": "停止",
+    "source": "llm"
+  }
+]

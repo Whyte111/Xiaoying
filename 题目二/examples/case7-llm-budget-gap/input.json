@@ -1,0 +1,8 @@
+{
+  "topic": "秋季校园活动",
+  "budget": 5.0,
+  "deadline": "2026-11-20",
+  "provider": "llm",
+  "model": "deepseek-chat",
+  "description": "真实模型遇到无可行方案：自行判断 A、B 均超预算后 stop，并给出缺口，而不是硬保存"
+}
