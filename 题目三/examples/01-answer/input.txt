@@ -1,0 +1,7 @@
+问题：出差住宿标准是多少？
+
+命令：
+python -m src.cli ask "出差住宿标准是多少？" --offline --script tests/fixtures/script_happy.json --trace-out examples/01-answer/trace.jsonl
+
+期望：状态 ANSWERED，引用 D01 第 2 节，引用片段逐字来自原文。
+说明：离线回放，无需密钥与网络，结果可复现。

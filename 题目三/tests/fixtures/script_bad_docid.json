@@ -1,0 +1,6 @@
+[
+  {"action": "read_doc", "args": {"doc_id": "D99"}, "reason": "读一个不存在的文档"},
+  {"action": "read_doc", "args": {"doc_id": "D98"}, "reason": "再读一个不存在的文档"},
+  {"action": "read_doc", "args": {"doc_id": "D97"}, "reason": "再次读取不存在的文档"},
+  {"action": "finish", "args": {"answer": "无法回答。", "citations": [], "gaps": ["找不到文档"]}, "reason": "放弃"}
+]

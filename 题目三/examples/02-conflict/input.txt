@@ -1,0 +1,7 @@
+问题：报销期限是多久？
+
+命令：
+python -m src.cli ask "报销期限是多久？" --offline --script tests/fixtures/script_conflict.json --trace-out examples/02-conflict/trace.jsonl
+
+期望：状态 NEEDS_CLARIFICATION。D01 规定 30 个自然日、D02 规定 15 个工作日，系统列出双方原文并要求确认，不擅自选一个。
+说明：该脚本故意模拟"模型只看 D02 就作答"，用于验证确定性冲突门禁能兜住。

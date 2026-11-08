@@ -1,0 +1,7 @@
+问题：出差住宿标准是多少？（检索工具被人为注入故障）
+
+命令：
+python -m src.cli ask "出差住宿标准是多少？" --offline --script tests/fixtures/script_fault_dead.json --fault search --fail-times 9 --trace-out examples/04-tool-failure/trace.jsonl
+
+期望：状态 TOOL_ERROR。连续 3 次工具异常后系统主动终止，返回明确失败状态，进程不崩溃。
+说明：只失败 1 次时模型会换关键词重试并成功，见 tests/fixtures/script_fault_recover.json。

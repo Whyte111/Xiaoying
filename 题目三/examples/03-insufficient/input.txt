@@ -1,0 +1,6 @@
+问题：公司年会在哪里举办？
+
+命令：
+python -m src.cli ask "公司年会在哪里举办？" --offline --script tests/fixtures/script_insufficient.json --trace-out examples/03-insufficient/trace.jsonl
+
+期望：状态 INSUFFICIENT。检索无命中，系统明确说资料中没有该内容，并给出缺口，不编造答案。

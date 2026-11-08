@@ -1,0 +1,2 @@
+{"step": 0, "action": "search", "args": {"query": "年会 举办 地点"}, "ok": true, "summary": "无命中结果", "reason": "先检索是否有年会相关制度", "elapsed_ms": 0, "turn": 1}
+{"step": 1, "action": "finish", "args": {"answer": "现有制度文档中没有关于公司年会举办地点的规定，无法依据制度回答。", "citations": [], "gaps": ["资料中不含年会/活动场地相关条款"]}, "ok": true, "summary": "结束，状态=INSUFFICIENT", "reason": "检索无命中，按规则不给无依据答案", "elapsed_ms": 0, "turn": 1}

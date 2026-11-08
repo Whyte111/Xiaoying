@@ -1,0 +1,8 @@
+[
+  {"action": "search", "args": {"query": "报销期限"}, "reason": "检索报销期限"},
+  {"action": "finish", "args": {
+    "answer": "报销期限为 15 个工作日。",
+    "citations": [],
+    "gaps": []
+  }, "reason": "看到冲突但不引用、直接给单值，验证状态语义"}
+]

@@ -1,0 +1,4 @@
+{"step": 0, "action": "search", "args": {"query": "出差住宿标准"}, "ok": false, "summary": "RuntimeError: 注入故障：检索服务不可用", "reason": "先检索住宿标准", "elapsed_ms": 0, "turn": 1}
+{"step": 1, "action": "search", "args": {"query": "住宿标准"}, "ok": false, "summary": "RuntimeError: 注入故障：检索服务不可用", "reason": "失败后重试", "elapsed_ms": 0, "turn": 1}
+{"step": 2, "action": "search", "args": {"query": "住宿 补贴 标准"}, "ok": false, "summary": "RuntimeError: 注入故障：检索服务不可用", "reason": "再次重试", "elapsed_ms": 0, "turn": 1}
+{"step": 2, "action": "tool_abort", "args": {}, "ok": false, "summary": "连续 3 次工具失败，终止", "reason": "guard", "elapsed_ms": 0, "turn": 1}

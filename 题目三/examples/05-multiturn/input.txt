@@ -1,0 +1,9 @@
+问题：
+1) 入职满3年不满5年的员工年假有几天？
+2) 那要怎么申请？
+
+命令：
+python -m src.cli ask "入职满3年不满5年的员工年假有几天？" "那要怎么申请？" --offline --script tests/fixtures/script_multiturn.json --trace-out examples/05-multiturn/trace.jsonl
+
+期望：两轮均为 ANSWERED。第二轮问题不含"年假"二字，系统需借助上一轮上下文改写检索词。
+说明：离线回放，trace 中 `turn` 字段区分轮次。

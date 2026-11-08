@@ -1,0 +1,17 @@
+[
+  {
+    "action": "search",
+    "args": {"query": "出差住宿标准"},
+    "reason": "先检索住宿标准"
+  },
+  {
+    "action": "search",
+    "args": {"query": "住宿标准"},
+    "reason": "失败后重试"
+  },
+  {
+    "action": "search",
+    "args": {"query": "住宿 补贴 标准"},
+    "reason": "再次重试"
+  }
+]
